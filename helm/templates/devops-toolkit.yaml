@@ -6,10 +6,10 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: production
+  project: test
   source:
     path: helm
-    repoURL: https://github.com/vfarcic/devops-toolkit.git
+    repoURL: https://github.com/popovicbojan/devops-toolkit.git
     targetRevision: HEAD
     helm:
       values: |
@@ -19,7 +19,7 @@ spec:
           host: devopstoolkitseries.com
       version: v3
   destination:
-    namespace: production
+    namespace: test
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

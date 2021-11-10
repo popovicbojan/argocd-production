@@ -6,10 +6,10 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: production
+  project: test
   source:
     path: helm
-    repoURL: https://github.com/vfarcic/devops-paradox.git
+    repoURL: https://github.com/popovicbojan/devops-paradox.git
     targetRevision: HEAD
     helm:
       values: |
@@ -19,7 +19,7 @@ spec:
           host: devopsparadox.com
       version: v3
   destination:
-    namespace: production
+    namespace: test
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
